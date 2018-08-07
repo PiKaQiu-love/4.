@@ -3,13 +3,13 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
  
-X=np.linspace(-5,5,200,dtype=np.float)
+X=np.linspace(-5,5,500,dtype=np.float)
 
-b0=random.randint(0,1)
-Y=X**2+b0-25+np.random.randn(200)
+b0=random.randtom()
+Y=X**2+b0-25+np.random.randn(500)
 # reshape
-X=np.reshape(X,(200,1))
-Y=np.reshape(Y,(200,1))
+X=np.reshape(X,(500,1))
+Y=np.reshape(Y,(500,1))
 #%% ANN
 with tf.name_scope('Input'):
     X_in=tf.placeholder('float',shape=[None,1])
@@ -29,7 +29,7 @@ with tf.name_scope('Evaluate'):
 with tf.Session() as sess:
     step=0
     sess.run(tf.global_variables_initializer())
-    while step<100:
+    while step<1000:
         Tstep=sess.run(trainstep,feed_dict={X_in:X, Y_in:Y})
         if step%3==0:
             loss=sess.run(Loss, feed_dict={X_in:X, Y_in:Y})
