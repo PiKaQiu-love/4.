@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
  
 X=np.linspace(-5,5,500,dtype=np.float)
 
-b0=random.randtom()
+b0=random.random()
 Y=X**2+b0-25+np.random.randn(500)
 # reshape
 X=np.reshape(X,(500,1))
